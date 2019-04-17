@@ -7,12 +7,9 @@ def main():
     surname = "Beksinski"
 
     ms.find_painter_url('Beksiński')
-    #f = open('..\ZPI\files_stuff\magazyn_sztuki_0.txt','w')
-    #f.write('c')
-    #f.close()
 
-    manager = Manager(name, surname)
-    manager.run()
+    #manager = Manager(name, surname)
+    #manager.run()
 
 if __name__ == "__main__":
     main()
