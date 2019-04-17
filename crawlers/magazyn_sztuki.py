@@ -45,7 +45,7 @@ def retrive_info(link):
     html = urlopen(link)
     bs = BeautifulSoup(html, 'html.parser')
     paragraphs = bs.find_all('p')
-    f = open('..\ZPI\loader\magazyn_sztuki_0.txt','w')
+    f = open('..\\ZPI\\files_stuff\\raw\\magazyn_sztuki.txt','w')
     for paragraph in paragraphs:
         if 'Zobacz moją stronę' in paragraph.get_text():
             break
@@ -55,8 +55,7 @@ def retrive_info(link):
 def get_image(url):
     html = urlopen(url)
     bs = BeautifulSoup(html, 'html.parser')
-    f = open("..\ZPI\loader\magazyn_sztuki_1.txt","w")
-    f.writelines('Pictures:\n')
+    f = open("..\\ZPI\\files_stuff\\pictures\\magazyn_sztuki.txt","w")
     images = bs.find_all('img',
         {'class': re.compile('size-medium wp-image-\d*')})
     for image in images:
@@ -66,7 +65,7 @@ def get_image(url):
 def get_category(url):
     html = urlopen(url)
     bs = BeautifulSoup(html, 'html.parser')
-    f = open("..\ZPI\loader\magazyn_sztuki_1.txt","a")
+    f = open("..\\ZPI\\files_stuff\\interpreted\\magazyn_sztuki.txt","w")
     f.writelines('Category:\n')
     list=[]
     categories = bs.find_all('a',{'rel': 'category tag'})
@@ -87,5 +86,3 @@ def convert_phrase(phrase):
     phrase = phrase.replace('ę', '%C4%99')
     phrase = phrase.replace('ś', '%C5%9B')
     return phrase
-
-
