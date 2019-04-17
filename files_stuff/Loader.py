@@ -1,16 +1,10 @@
 class Loader:
 
-    filename_base = ""
-    next_file_no = 0
-
-    def __init__(self, name, surname):
-        self.filename_base = name + "_" + surname
-
-    def get_next_file(self):
-        contents = ""
+    @staticmethod
+    def get_file_data(file_path):
+        contents = None
         opened = True
 
-        file_path = self.filename_base + "_" + str(self.next_file_no) + ".txt"
         try:
             f = open(file_path, "r")
         except IOError:
@@ -19,5 +13,4 @@ class Loader:
         if opened is True:
             contents = f.read()
 
-        self.next_file_no += 1
         return contents
