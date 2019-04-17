@@ -4,45 +4,25 @@ from manager.Painter import Painter
 
 class Manager:
 
-    painter = None
-    name = ""
-    surname = ""
-
     def __init__(self, name, surname):
         self.name = name
         self.surname = surname
-
-    def load_data(self, name, surname):
-        loader = Loader(name, surname)
-
-        painter = self.get_painter_by_name(name, surname)
-
-        if painter is None:
-            new_painter = Painter(name, surname)
-            self.painters.append(new_painter)
-
-        next_file = loader.get_next_file()
-        while next_file != "":
-            new_painter.new_text(next_file)
-            next_file = loader.get_next_file()
+        self.crawlers_list = []
+        self.painter = None
 
     def run(self):
-        #self.new_data("Zdzislaw", "Beksinski")
-        #self.print_painters()
-        print("ok")
+        self.crawlers_list = Loader.get_file_as_list("misc/crawler_names_list.txt")
+        self.painter = Painter(self.name, self.surname)
+        self.print_crawler_list()
 
-    def get_painter_by_name(self, name, surname):
-        painter = None
-        i = 0
+    def print_crawler_list(self):
+        print("crawlers list:")
 
-        while Painter is None and i < len(self.painters):
-            if self.painters[i].same_name(name, surname):
-                painter = self.painters[i]
-                i += 1
+        if self.crawlers_list is []:
+            print("pusto")
+        else:
+            for crawler in self.crawlers_list:
+                print("["+crawler+"]")
 
-        return painter
 
-    def print_painters(self):
-        for i in range(len(self.painters)):
-            self.painters[i].print()
 
