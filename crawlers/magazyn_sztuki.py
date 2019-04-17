@@ -26,8 +26,8 @@ def check_pages(pageUrl,phrase,pages):
         try:
             if "malarze" in post.h5.a['href']:
                 if phrase in post.h4.a['href']:
-                    retrive_info(post.h4.a['href'])
                     get_image(post.h4.a['href'])
+                    retrive_info(post.h4.a['href'])
         except:
             continue
     link = bs.find('a', href=re.compile('http://www.magazynsztuki.pl/page/.*/?s='))
@@ -46,19 +46,23 @@ def retrive_info(link):
     paragraphs = bs.find_all('p')
     f = open('..\ZPI\loader\magazyn_sztuki_0.txt','w')
     for paragraph in paragraphs:
-         f.write(paragraph)
+        if 'Zobacz moją stronę' in paragraph.get_text():
+            break
+        f.write(paragraph.get_text()+'\n')
     f.close
 
 def get_image(url):
     html = urlopen(url)
     bs = BeautifulSoup(html, 'html.parser')
-    f = open("..\ZPI\loader\magazyn_sztuki_0.txt","a")
-    f.write('Pictures:')
+    f = open("..\ZPI\loader\magazyn_sztuki_1.txt","w")
+    f.writelines('Pictures:\n')
     images = bs.find_all('img',
         {'class': re.compile('size-medium wp-image-\d*')})
     for image in images:
-        f.write(image['src'])
+        f.writelines(image['src']+'\n')
     f.close
+
+
 
 def convert_phrase(phrase):
     phrase = phrase.replace('ł','%C5%82')
