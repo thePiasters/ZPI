@@ -28,6 +28,7 @@ def check_pages(pageUrl,phrase,pages):
                 if phrase in post.h4.a['href']:
                     get_image(post.h4.a['href'])
                     retrive_info(post.h4.a['href'])
+                    get_category(post.h4.a['href'])
         except:
             continue
     link = bs.find('a', href=re.compile('http://www.magazynsztuki.pl/page/.*/?s='))
@@ -60,6 +61,17 @@ def get_image(url):
         {'class': re.compile('size-medium wp-image-\d*')})
     for image in images:
         f.writelines(image['src']+'\n')
+    f.close
+
+def get_category(url):
+    html = urlopen(url)
+    bs = BeautifulSoup(html, 'html.parser')
+    f = open("..\ZPI\loader\magazyn_sztuki_1.txt","a")
+    f.writelines('Category:\n')
+    list=[]
+    categories = bs.find_all('a',{'rel': 'category tag'})
+    for category in categories:
+        f.write(category.get_text()+'\n')
     f.close
 
 
