@@ -3,6 +3,7 @@ from urllib.error import HTTPError
 from bs4 import BeautifulSoup
 import re
 from unidecode import unidecode
+from misc import misc
 import urllib.parse
 from urllib.parse import quote
 
@@ -66,11 +67,11 @@ def get_category(url):
     html = urlopen(url)
     bs = BeautifulSoup(html, 'html.parser')
     f = open("..\\ZPI\\files_stuff\\interpreted\\magazyn_sztuki.txt","w")
-    f.writelines('Category:\n')
     list=[]
     categories = bs.find_all('a',{'rel': 'category tag'})
     for category in categories:
-        f.write(category.get_text()+'\n')
+        list.append(category.get_text())
+    f.write(misc.get_interpreted_file_template('','','','',list,[]))
     f.close
 
 
