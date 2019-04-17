@@ -1,12 +1,18 @@
-from Loader import Loader
-from Painter import Painter
+from files_stuff.Loader import Loader
+from manager.Painter import Painter
 
 
 class Manager:
 
-    painters = []
+    painter = None
+    name = ""
+    surname = ""
 
-    def new_data(self, name, surname):
+    def __init__(self, name, surname):
+        self.name = name
+        self.surname = surname
+
+    def load_data(self, name, surname):
         loader = Loader(name, surname)
 
         painter = self.get_painter_by_name(name, surname)
@@ -21,8 +27,9 @@ class Manager:
             next_file = loader.get_next_file()
 
     def run(self):
-        self.new_data("Zdzislaw", "Beksinski")
-        self.print_painters()
+        #self.new_data("Zdzislaw", "Beksinski")
+        #self.print_painters()
+        print("ok")
 
     def get_painter_by_name(self, name, surname):
         painter = None
