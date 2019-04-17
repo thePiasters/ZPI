@@ -5,7 +5,7 @@ def main():
     name = "Zdzislaw"
     surname = "Beksinski"
 
-    ms.find_painter_url('Beksiński')
+    ms.find_painter_url('Rembrandt')
     #f = open('..\ZPI\loader\magazyn_sztuki_0.txt','w')
     #f.write('c')
     loader = LoaderMain(name, surname)
