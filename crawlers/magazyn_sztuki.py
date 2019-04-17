@@ -6,14 +6,16 @@ from unidecode import unidecode
 import urllib.parse
 from urllib.parse import quote
 
+#start method
 def find_painter_url(phrase):
-    phrase=phrase.replace(" ", "+")
-    phrase = convert_phrase(phrase)
+    to_find=phrase.replace(" ", "+")
+    to_find = convert_phrase(to_find)
+    phrase=unidecode(phrase)
+    phrase= phrase.lower()
     pages = set()
 
-    url = 'http://www.magazynsztuki.pl/page/1/?s=' + phrase
+    url = 'http://www.magazynsztuki.pl/page/1/?s=' + to_find
     check_pages(url,phrase,pages)
-
 
 
 def check_pages(pageUrl,phrase,pages):
@@ -23,7 +25,9 @@ def check_pages(pageUrl,phrase,pages):
     for post in posts:
         try:
             if "malarze" in post.h5.a['href']:
-                print(post.h4.a['href'])
+                if phrase in post.h4.a['href']:
+                    retrive_info(post.h4.a['href'])
+                    get_image(post.h4.a['href'])
         except:
             continue
     link = bs.find('a', href=re.compile('http://www.magazynsztuki.pl/page/.*/?s='))
@@ -36,18 +40,29 @@ def check_pages(pageUrl,phrase,pages):
     except:
         return
 
+def retrive_info(link):
+    html = urlopen(link)
+    bs = BeautifulSoup(html, 'html.parser')
+    paragraphs = bs.find_all('p')
+    f = open('..\ZPI\loader\magazyn_sztuki_0.txt','w')
+    for paragraph in paragraphs:
+         f.write(paragraph)
+    f.close
 
 def get_image(url):
     html = urlopen(url)
     bs = BeautifulSoup(html, 'html.parser')
+    f = open("..\ZPI\loader\magazyn_sztuki_0.txt","a")
+    f.write('Pictures:')
     images = bs.find_all('img',
         {'class': re.compile('size-medium wp-image-\d*')})
     for image in images:
-        print(image['src'])
+        f.write(image['src'])
+    f.close
 
 def convert_phrase(phrase):
     phrase = phrase.replace('ł','%C5%82')
-    phrase =phrase.replace('ą','%C4%85')
+    phrase = phrase.replace('ą','%C4%85')
     phrase = phrase.replace('ż', '%C5%BC')
     phrase = phrase.replace('ź', '%C5%BA')
     phrase = phrase.replace('ć', '%C4%87')
@@ -58,4 +73,3 @@ def convert_phrase(phrase):
     return phrase
 
 
-find_painter_url('vinci')
