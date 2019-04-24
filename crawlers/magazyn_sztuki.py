@@ -3,17 +3,20 @@ from urllib.error import HTTPError
 from bs4 import BeautifulSoup
 import re
 from unidecode import unidecode
+from misc import misc
 import urllib.parse
 from urllib.parse import quote
 
+#start method
 def find_painter_url(phrase):
-    phrase=phrase.replace(" ", "+")
-    phrase = convert_phrase(phrase)
+    to_find=phrase.replace(" ", "+")
+    to_find = convert_phrase(to_find)
+    phrase=unidecode(phrase)
+    phrase= phrase.lower()
     pages = set()
 
-    url = 'http://www.magazynsztuki.pl/page/1/?s=' + phrase
+    url = 'http://www.magazynsztuki.pl/page/1/?s=' + to_find
     check_pages(url,phrase,pages)
-
 
 
 def check_pages(pageUrl,phrase,pages):
@@ -23,7 +26,10 @@ def check_pages(pageUrl,phrase,pages):
     for post in posts:
         try:
             if "malarze" in post.h5.a['href']:
-                print(post.h4.a['href'])
+                if phrase in post.h4.a['href']:
+                    get_image(post.h4.a['href'])
+                    retrive_info(post.h4.a['href'])
+                    get_category(post.h4.a['href'])
         except:
             continue
     link = bs.find('a', href=re.compile('http://www.magazynsztuki.pl/page/.*/?s='))
@@ -36,18 +42,43 @@ def check_pages(pageUrl,phrase,pages):
     except:
         return
 
+def retrive_info(link):
+    html = urlopen(link)
+    bs = BeautifulSoup(html, 'html.parser')
+    paragraphs = bs.find_all('p')
+    f = open('..\\ZPI\\files_stuff\\raw\\magazyn_sztuki.txt','w')
+    for paragraph in paragraphs:
+        if 'Zobacz moją stronę' in paragraph.get_text():
+            break
+        f.write(paragraph.get_text()+'\n')
+    f.close
 
 def get_image(url):
     html = urlopen(url)
     bs = BeautifulSoup(html, 'html.parser')
+    f = open("..\\ZPI\\files_stuff\\pictures\\magazyn_sztuki.txt","w")
     images = bs.find_all('img',
         {'class': re.compile('size-medium wp-image-\d*')})
     for image in images:
-        print(image['src'])
+        f.writelines(image['src']+'\n')
+    f.close
+
+def get_category(url):
+    html = urlopen(url)
+    bs = BeautifulSoup(html, 'html.parser')
+    f = open("..\\ZPI\\files_stuff\\interpreted\\magazyn_sztuki.txt","w")
+    list=[]
+    categories = bs.find_all('a',{'rel': 'category tag'})
+    for category in categories:
+        list.append(category.get_text())
+    f.write(misc.get_interpreted_file_template('','','','','','',list,[]))
+    f.close
+
+
 
 def convert_phrase(phrase):
     phrase = phrase.replace('ł','%C5%82')
-    phrase =phrase.replace('ą','%C4%85')
+    phrase = phrase.replace('ą','%C4%85')
     phrase = phrase.replace('ż', '%C5%BC')
     phrase = phrase.replace('ź', '%C5%BA')
     phrase = phrase.replace('ć', '%C4%87')
@@ -56,6 +87,3 @@ def convert_phrase(phrase):
     phrase = phrase.replace('ę', '%C4%99')
     phrase = phrase.replace('ś', '%C5%9B')
     return phrase
-
-
-find_painter_url('vinci')
