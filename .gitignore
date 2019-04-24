@@ -7,8 +7,6 @@ manager/__pycache__/Painter.cpython-37.pyc
 misc/__pycache__/misc.cpython-37.pyc
 
 
-Github has a great boilerplate .gitignore
-
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
