@@ -23,12 +23,14 @@ def format(*args):
     return wiki_request_format
 
 
-def get_raw_text(*names):
-
+def get_raw_text(path, *names):
+    file = open(path, 'w', encoding='utf-8')
     soup = set_up_url(*names)
 
-    for component in soup.find_all('p' or 'h2'):
-        print(component.getText())
+
+    for component in soup.find_all('p' or 'h2' or 'h3'):
+        file.write(component.getText())
+    file.close();
 
 def concat(string, stirng_to_concat):
     if stirng_to_concat is not None:
@@ -36,32 +38,37 @@ def concat(string, stirng_to_concat):
     return string
 
 
-def create_dictionary(*names):
+def create_dictionary(path, *names,):
     soup = set_up_url(*names)
 
-    file = open('testfile.txt', 'w', encoding='utf-8')
-    string = "IMIĘ I NAZWSISKO: " + find_buy_key_word(soup, 'Imię')+'\n'
+    file = open(path, 'w', encoding='utf-8')
+    string = "IMIĘ I NAZWSISKO: " + find_by_key_word(soup, 'Imię') + '\n'
     file.write(string)
-    string = 'DATA URODZENIA: ' + extract_date(find_buy_key_word(soup, 'urodzenia'))+'\n'
-    file.write(string)
-
-    string = 'DATA ŚMIERCI: '+ extract_date(find_buy_key_word(soup, 'śmierci'))+'\n'
-    file.write(string)
-    string = 'MIEJCE URODZENIA: '+extract_place(find_buy_key_word(soup, 'urodzenia'))+'\n'
-    file.write(string)
-    string = 'MIEJCE ŚMIERCI: '+ extract_place(find_buy_key_word(soup, 'śmierci'))+'\n'
-    file.write(string)
-    string = concat('Wykształcenie/uczelnia: ',find_buy_key_word(soup, 'Alma Mater'))+'\n'
-    file.write(string)
-    string = 'Najwazniejsze dziela: '.join(find_work_of_arts(soup))+'\n'
-    file.write(string)
-    string = 'Epoka: '+ find_buy_key_word(soup, 'Epoka')+'\n'
-    file.write(string)
-    string = 'Muzeum artysty: '+ find_buy_key_word(soup, 'Muzeum')+'\n'
-    file.write(string)
-    string = 'Pliki graficzne: '.join(get_images(*names))+'\n'
+    string = 'DATA URODZENIA: ' + extract_date(find_by_key_word(soup, 'urodzenia')) + '\n'
     file.write(string)
 
+    string = 'DATA ŚMIERCI: ' + extract_date(find_by_key_word(soup, 'śmierci')) + '\n'
+    file.write(string)
+    string = 'MIEJCE URODZENIA: ' + extract_place(find_by_key_word(soup, 'urodzenia')) + '\n'
+    file.write(string)
+    string = 'MIEJCE ŚMIERCI: ' + extract_place(find_by_key_word(soup, 'śmierci')) + '\n'
+    file.write(string)
+    string = concat('Wykształcenie/uczelnia: ', find_by_key_word(soup, 'Alma Mater')) + '\n'
+    file.write(string)
+
+    string = 'Najwazniejsze dziela: '
+
+    for art in find_work_of_arts(soup):
+        string += art+", "
+    file.write(string)
+
+    string = '\n Epoka: ' + find_by_key_word(soup, 'Epoka') + '\n'
+    file.write(string)
+    string = 'Muzeum artysty: ' + find_by_key_word(soup, 'Muzeum') + '\n'
+    file.write(string)
+    string = 'Pliki graficzne: \n '
+    file.write(string)
+    file.write(get_images(*names))
     file.close()
 
 
@@ -88,16 +95,17 @@ def extract_place(string):
         return place
 
 
-def find_buy_key_word(soup, keyword):
+def find_by_key_word(soup, keyword):
     component = soup.find('table', class_="infobox")
     if component is not None:
         for child in component.find_all('tr'):
             if child.getText().find(keyword) != -1:
                 for i in child.find_all('td'):
                     if i.getText().find(keyword) == -1:
-                        return i.getText()
+                        if i.getText() is not None:
+                            return i.getText()
+    return ""
 
-#TODO: dodac wyciągniete z linkuw obrazki do kolekcji z img
 def find_work_of_arts(soup):
     component = soup.find('table', class_="infobox")
     paintings = []
@@ -108,8 +116,9 @@ def find_work_of_arts(soup):
                 contains_header = True
             if contains_header:
                  for i in child.find_all('i'):
-                     paintings.append(i.find('a').getText())
-    print(paintings)
+                     if i is not None:
+                        if i.find('a') is not None:
+                            paintings.append(i.find('a').getText())
     return paintings
 
 
@@ -118,20 +127,23 @@ def find_work_of_arts(soup):
 def get_images(*names):
     soup = set_up_url(*names)
     components = soup.find_all('img')
-    sources = []
+    string =""
     for img in components:
-        sources.append(img['src'])
-    return sources
+        if "//upload.wikimedia" not in img['src'] or "svg" in img['src']:
+            continue
+        string += img['src'] +"\n"
+    return string;
 
-# create_dictionary("Jan", "Matejko")
-# create_dictionary("Pablo", "Picasso")
-# create_dictionary("Salvador", "Dali")
-# create_dictionary("Claude", "Monet")
-# create_dictionary("Paul", "Gauguin")
-# create_dictionary("Amanda", "Lear")
-# create_dictionary("Michał", "Anioł")
+#create_dictionary("Jan", "Matejko")
+#create_dictionary("Pablo", "Picasso")
+#create_dictionary("Salvador", "Dali")
+#create_dictionary("Claude", "Monet")
+#create_dictionary("Paul", "Gauguin")
+#create_dictionary("Amanda", "Lear")
+#create_dictionary("Michał", "Anioł")
 
 
-create_dictionary("Rembrandt")
-# create_dictionary("Leonardo", "da", "Vinci")
+#create_dictionary( "dict.txt", "Rembrandt")
+#create_dictionary("Leonardo", "da", "Vinci")
 # create_dictionary("Vincent", "van", "Gogh")
+get_raw_text("raw.txt", "Rembrandt")
