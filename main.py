@@ -6,7 +6,7 @@ def main():
     name = "Zdzislaw"
     surname = "Beksinski"
 
-    ms.find_painter_url(name+' '+surname)
+    ms.find_painter_url(surname)
 
     manager = Manager(name, surname)
     manager.run()

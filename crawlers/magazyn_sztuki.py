@@ -71,7 +71,7 @@ def get_category(url):
     categories = bs.find_all('a',{'rel': 'category tag'})
     for category in categories:
         list.append(category.get_text())
-    f.write(misc.get_interpreted_file_template('','','','',list,[]))
+    f.write(misc.get_interpreted_file_template('','','','','','',list,[]))
     f.close
 
 
