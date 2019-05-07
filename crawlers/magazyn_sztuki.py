@@ -3,7 +3,6 @@ from urllib.error import HTTPError
 from bs4 import BeautifulSoup
 import re
 from unidecode import unidecode
-from misc import misc
 import urllib.parse
 from urllib.parse import quote
 

@@ -6,7 +6,7 @@ class Loader:
         opened = True
 
         try:
-            f = open(file_path, "r")
+            f = open(file_path, encoding="utf8")
         except IOError:
             opened = False
 

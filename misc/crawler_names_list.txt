@@ -1,2 +1,3 @@
-magazyn_sztuki
-wiki
+placeholder_crawler1
+placeholder_crawler2
+placeholder_crawler3

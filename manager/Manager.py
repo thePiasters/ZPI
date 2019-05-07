@@ -1,6 +1,7 @@
 from files_stuff.Loader import Loader
+from files_stuff.Saver import Saver
 from manager.Painter import Painter
-import misc.misc
+
 
 class Manager:
 
@@ -8,12 +9,15 @@ class Manager:
         self.name = name
         self.surname = surname
         self.crawlers_list = []
-        self.painter = None
+        self.painter = Painter(self.name, self.surname)
+        self.saver = Saver()
+        self.saver.placeholder_file_creator()
+        self.crawlers_list = Loader.get_file_as_list("misc/crawler_names_list.txt")
 
     def run(self):
-        self.crawlers_list = Loader.get_file_as_list("misc/crawler_names_list.txt")
-        self.painter = Painter(self.name, self.surname)
-        self.print_crawler_list()
+        #self.print_crawler_list()
+        self.get_crawlers_data()
+        self.saver.save_final_file(self.painter.text_dump())
 
     def print_crawler_list(self):
         print("crawlers list:")
@@ -29,16 +33,38 @@ class Manager:
             raw_data = Loader.get_file_raw("files_stuff/raw/"+crawler+".txt")
             self.painter.new_text(raw_data)
 
-            interpreted_file = Loader.get_file("files_stuff/interpreted/"+crawler+".txt")
+            interpreted_file_lines = Loader.get_file_as_list("files_stuff/interpreted/"+crawler+".txt")
 
-            interpreted_file.readLine().strip()
-            interpreted_file.readLine().strip()
-            data_ur = interpreted_file.readLine().strip()
-            miejsce_ur = interpreted_file.readLine().strip()
-            data_sm = interpreted_file.readLine().strip()
-            miejsce_sm = interpreted_file.readLine().strip()
-            epoka = interpreted_file.readLine().strip()
+            data_ur_list = self.explode_line(interpreted_file_lines[0])
+            miejsce_ur_list = self.explode_line(interpreted_file_lines[1])
+            data_sm_list = self.explode_line(interpreted_file_lines[2])
+            miejsce_sm_list = self.explode_line(interpreted_file_lines[3])
+            kategoria_list = self.explode_line(interpreted_file_lines[4])
+            dzielo_list = self.explode_line(interpreted_file_lines[5])
 
-            if data_ur is not None:
-                self.painter.new_birth_date(data_ur)
+            for dane in data_ur_list:
+                self.painter.new_dictionary_entries(dane, "data_ur")
+
+            for dane in miejsce_ur_list:
+                self.painter.new_dictionary_entries(dane, "miejsce_ur")
+
+            for dane in data_sm_list:
+                self.painter.new_dictionary_entries(dane, "data_sm")
+
+            for dane in miejsce_sm_list:
+                self.painter.new_dictionary_entries(dane, "miejsce_sm")
+
+            for dane in kategoria_list:
+                self.painter.new_dictionary_entries(dane, "kategoria")
+
+            for dane in dzielo_list:
+                self.painter.new_dictionary_entries(dane, "dzielo")
+
+    def explode_line(self, line):
+        list = line.split(',')
+        for element in list:
+            element.strip()
+
+        return list
+
 

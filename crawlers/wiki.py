@@ -1,6 +1,5 @@
 import requests
 from bs4 import BeautifulSoup
-from misc import misc
 
 months_and_syntax = ['stycznia', 'lutego', 'marca', 'kwietnia', 'maja', 'czerwca',
                      'lipca', 'sierpnia', 'września', 'października', 'listopada', 'grudnia', 'ok.']
