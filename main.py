@@ -4,8 +4,8 @@ from crawlers import wiki
 
 
 def main():
-    name = "Zdzisław"
-    surname = "Beksiński"
+    name = "Jan"
+    surname = "Matejko"
 
     wiki_painter = wiki.run(name, surname)
     ms.find_painter_url(surname)

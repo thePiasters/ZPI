@@ -13,7 +13,7 @@ class Manager:
         self.saver = Saver()
         self.saver.placeholder_file_creator()
         self.crawlers_list = Loader.get_file_as_list("misc/crawler_names_list.txt")
-        self.temp_painters_list = {}
+        self.temp_painters_list = []
 
     def run(self):
         #self.print_crawler_list()

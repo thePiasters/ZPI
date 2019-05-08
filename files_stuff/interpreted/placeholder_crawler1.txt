@@ -1,7 +1,7 @@
-1702,1701,
+1701,1702,
 Lebork,
 
-Poland,Warsaw,
+Warsaw,Poland,
 
-costam2,costam,monalisa,bulka,
+monalisa,costam,costam2,bulka,
 
