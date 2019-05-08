@@ -2,6 +2,6 @@
 Lebork,
 1766,
 Wroclaw,
-costam1,plakat,impresjonizm,
-monalisa,costam,
+impresjonizm,costam1,plakat,
+costam,monalisa,
 

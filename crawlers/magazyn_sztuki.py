@@ -51,7 +51,7 @@ def retrive_info(link):
     html = urlopen(link)
     bs = BeautifulSoup(html, 'html.parser')
     paragraphs = bs.find_all('p')
-    f = open('..\\ZPI\\files_stuff\\raw\\magazyn_sztuki.txt','w')
+    f = open('..\\ZPI\\files_stuff\\raw\\magazyn_sztuki.txt','w', encoding='utf-8')
     for paragraph in paragraphs:
         if 'Zobacz moją stronę' in paragraph.get_text():
             break
@@ -61,7 +61,7 @@ def retrive_info(link):
 def get_image(url):
     html = urlopen(url)
     bs = BeautifulSoup(html, 'html.parser')
-    f = open("..\\ZPI\\files_stuff\\pictures\\magazyn_sztuki.txt","w")
+    f = open("..\\ZPI\\files_stuff\\pictures\\magazyn_sztuki.txt","w", encoding='utf-8')
     images = bs.find_all('img',
         {'class': re.compile('size-medium wp-image-\d*')})
     for image in images:
@@ -71,7 +71,7 @@ def get_image(url):
 def get_category(url):
     html = urlopen(url)
     bs = BeautifulSoup(html, 'html.parser')
-    f = open("..\\ZPI\\files_stuff\\interpreted\\magazyn_sztuki.txt","w")
+    f = open("..\\ZPI\\files_stuff\\interpreted\\magazyn_sztuki.txt","w", encoding='utf-8')
     list=[]
     categories = bs.find_all('a',{'rel': 'category tag'})
     for category in categories:

@@ -1,40 +1,3 @@
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-BIO
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-[Name]:
-Zdzisław
-
-[Surname]:
-Beksiński
-
-[Birth Date]:
-24 lutego 1929  - 1 occurrences
-
-[Birth Place]:
-Sanok  - 1 occurrences
-
-[Death Date]:
-21 lutego 2005  - 1 occurrences
-
-[Death Place]:
-Warszawa  - 1 occurrences
-
-[Categories]:
-Malarze współcześni - 2 occurrences
-Surrealiści - 2 occurrences
-Symboliści - 2 occurrences
-
-[Works]:
-
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-RAW TEXTS
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-~~~~~~~~~~~~~
-SOURCE 0
-~~~~~~~~~~~~~
 Zdzisław Beksiński (ur. 24 lutego 1929 w Sanoku[1], zm. 21 lutego 2005 w Warszawie) – polski inżynier architekt, malarz, rzeźbiarz, fotograf, rysownik i artysta posługujący się też grafiką komputerową.
 Rodzina Beksińskiego związana była z Sanokiem od kilku pokoleń. Pradziadek Zdzisława, Mateusz, jako pierwszy przybył do miasta i w latach 40. XIX wieku założył Zakłady Kotlarskie, które dały początek późniejszej fabryce wagonów i autobusów Autosan. Dziadek Władysław był architektem miejskim i autorem wielu projektów budynków i terenu miasta Sanoka. Łącznie pięć pokoleń Beksińskich od 2. połowy XIX wieku do końca lat 70. XX wieku zamieszkiwało w domu przy ulicy Jagiellońskiej w Sanoku[2]. Ojciec Zdzisława, Stanisław (1887-1953), żołnierz armii Hallera i działacz TG „Sokół”[3], był inżynierem geometrą, mierniczym przysięgłym[4], pracował w wydziale budowlanym miejskiego magistratu. Matką Zdzisława była Stanisława, z d. Dworska[5] (ur. 1899, córka Tadeusza[6], nauczycielka[7], korepetytorka, tworzyła także rysunki i malowała akwarele[8]). Zdzisław Beksiński był ich jedynym dzieckiem[9]. Jego rodzicami chrzestnymi zostali kpt. Franciszek Orawiec i Helena Potocka z d. Dworska[10]. Siostrą jego matki była Maria, żona Stanisława Potockiego[11].
 W czasie II wojny światowej, podczas trwającej okupacji niemieckiej, Zdzisław Beksiński uczęszczał do sanockiej szkoły handlowej w Sanoku (Polnische Öffentliche Handelsschule) jednocześnie pobierając edukację w ramach tajnego nauczania. Wówczas uczył się także gry na fortepianie. W wyniku eksplozji spowodowanej zabawą niewybuchami wojennymi utracił część kciuka i palca wskazującego u ręki[12]. W 1947 roku ukończył klasę o profilu matematyczno-fizycznym i zdał egzamin dojrzałości w Liceum Ogólnokształcącym w Sanoku[13][14] (wykonał wówczas pamiątkowe maturalne tableau[15]). Następnie rozpoczął studia na Wydziale Architektury Politechniki Krakowskiej. W trakcie studiów, 30 kwietnia 1951 roku, zawarł związek małżeński z Zofią Heleną Stankiewicz (ur. 1928, absolwentka romanistyki[16]) w Dynowie, jej rodzinnej miejscowości[1][5][17]. 31 maja 1952 uzyskał tytuł inżyniera architekta i magistra nauk technicznych[1][18][a]. Po ukończeniu studiów w 1952 roku, zobowiązany ówczesnymi przepisami o nakazie pracy, nadal mieszkał w Krakowie, a później w Rzeszowie.
@@ -53,23 +16,3 @@ Po 2000 roku, nie zaprzestając jednocześnie malować i rysować, zaczął Beks
 W 2001 cały dorobek artystyczny Beksiński zapisał w testamencie Muzeum Historycznemu w Sanoku, któremu już za życia przekazał ok. 300 swoich prac. Po śmierci artysty Muzeum otrzymało ok. 20 jego ostatnich obrazów, ok. 1000 zdjęć i grafik, a także cały majątek – mieszkania, lokaty bankowe, sprzęt komputerowy[48]. Zbiory muzeum powiększyły się również o zapisy multimedialne, listy i filmy dokumentujące życie rodzinne twórcy. Muzeum posiada obecnie największą kolekcję dzieł artysty, obejmującą kilka tysięcy obrazów, reliefów, rzeźb, rysunków, grafik i fotografii.
 Ośrodek systematycznie gromadził środki finansowe na budowę osobnego skrzydła w sanockim Zamku Królewskim celem stworzenia w nim autorskiej galerii Beksińskiego. Odbudowa południowego skrzydła sanockiego zamku ruszyła wiosną 2010[49], a została ukończona jesienią 2011. W pomieszczeniach skrzydła rozpoczęto wówczas urządzanie stałej Galerii Zdzisława Beksińskiego. Prace trwały do końca kwietnia 2012 roku[50]. Otwarcie Galerii Beksińskiego miało miejsce 18 maja 2012 roku dla gości oficjalnych[51], a dzień później dla ogółu zwiedzających[52]. Zgodnie z zamierzeniami Galeria Beksińskiego znajduje się w południowo-wschodnim skrzydle Zamku na kilku kondygnacjach. Znajduje się w niej niemal 300 prac artysty (oprócz obrazów także fotografie i rysunki). Osobną atrakcją jest precyzyjnie zrekonstruowana pracownia Beksińskiego, pierwotnie znajdująca się w jego warszawskim mieszkaniu przy ulicy Sonaty. Koszt stworzenia Galerii wyniósł 4,5 miliona zł.
 Oprócz muzeum w Sanoku, które posiada obecnie najszerszy zbiór dzieł Beksińskiego, znaczące kolekcje posiadają:
-
-
-~~~~~~~~~~~~~
-SOURCE 1
-~~~~~~~~~~~~~
-Zdzisław Beksiński, jeden z najwybitniejszych artystów polskich XX wieku, urodził się 24 lutego 1929 roku w Sanoku. Po ukończeniu gimnazjum i liceum, kształcił się na Wydziale Architektury Politechniki Krakowskiej. Po studiach pracował w Krakowie oraz Rzeszowie. W 1955 roku wraz z żoną, Zofią, powrócił do rodzinnego Sanoka. Powrót ten okazał się dla Beksińskiego bardzo trudny. Przestał wówczas pracować w budownictwie i nie chciał podjąć żadnej innej pracy. Utrzymywały go żona i matka. Dorabiał pracując, między innymi na pół etatu jako designer w sanockiej fabryce autobusów. Wtedy też podjął decyzję co do swojej artystycznej przyszłości – poświęcił się fotografowaniu, malowaniu i rysowaniu.
-W 1958 roku jego prace fotograficzne zaprezentowane zostały szerszej publiczności na kilku wystawach w Warszawie, Gliwicach i Poznaniu. Pierwszy poważny sukces artysty dotyczył jednak jego obrazów i rysunków, które wystawiono w 1964 roku w Starej Pomarańczarni w Warszawie. Wszystkie wystawione wówczas prace zostały sprzedane.
-W 1977 roku, Beksiński wraz z żoną i dziewiętnastoletnim synem Tomaszem przeprowadził się do Warszawy. Bezpośrednim powodem przeprowadzki był nakaz rozbiórki rodzinnego domu Beksińskich w Sanoku. Warszawa przyjęła malarza z otwartymi ramionami. Jego prace cieszyły się w stolicy ogromnym powodzeniem. Beksiński spotkał wówczas Piotra Dmochowskiego, swojego najbardziej upartego i zaangażowanego promotora i wieloletniego przyjaciela i rozpoczął z nim współpracę. Dmochowski zorganizował wiele wystaw Beksińskiego, zarówno w kraju, jak i na Zachodzie. Wyprodukował on nawet krótkometrażowy film „W hołdzie Beksińskiemu”, który pokazano w 1986 roku na Festiwalu Filmowym w Cannes.
-Zdzisław Beksiński, obraz bez tytułu, ok. 2000-2005
-Zdzisław Beksiński został zamordowany 21 lutego 2005 roku w swoim mieszkaniu. Sześć lat wcześniej, w 1999 roku jego syn Tomasz Beksiński popełnił samobójstwo.
-Zdaniem wielu, obrazy Beksińskiego reprezentują surrealizm w stylu Salvadora Dalego („Trwałość pamięci”). Nie jest to jednak skojarzenie do końca uzasadnione. Beksiński wypracował bowiem własny, niepowtarzalny styl, oparty na psychologicznej podświadomości i wolności formalnej.
-Beksiński zrezygnował z fotografii, gdy okazała się ona niewystarczająca dla urzeczywistniania tworów jego wyobraźni. Zwrócił się więc w stronę swobodniejszych form wyrazu – rysunku, malarstwa oraz rzeźby.
-Wczesne obrazy Beksińskiego miały charakter ekspresjonistyczny. Po latach malarz uznał je za naiwne i zniszczył. Swoją technikę ugruntował Beksiński w pracach abstrakcyjnych, które tworzył od drugiej połowy lat 50. Ujawniły się wówczas charakterystyczne cechy malarstwa Beksińskiego:
-Dotkliwy i mroczny symbolizm obrazów Beksińskiego podzielił krytyków na jego gorących wielbicieli i zaciekłych przeciwników.
-Zdzisław Beksiński, obraz bez tytułu, 1979
-Zarzucano mu, między innymi, niekonsekwencję kompozycyjną i formalną, kicz. Malarz musiał przez wiele lat bronić swojego prawa do swobodnego posługiwania się swoją wyobraźnią.
-Beksiński z reguły nie nazywał swoich prac. Uważał, że znaczenie jego obrazów powinno ujawnić się duszy odbiorcy, a do tego nie potrzeba żadnych objaśnień.
-Prace Zdzisława Beksińskiego przedstawiały jego własne przeżycia, myśli, lęki, obsesje. Jak sam twierdził, potrafił malować, ale nie potrafił powiedzieć nic rozsądnego na temat swoich obrazów.
-
-
