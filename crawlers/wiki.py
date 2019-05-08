@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 from files_stuff.Saver import Saver
+from manager.Painter import Painter
 
 months_and_syntax = ['stycznia', 'lutego', 'marca', 'kwietnia', 'maja', 'czerwca',
                      'lipca', 'sierpnia', 'września', 'października', 'listopada', 'grudnia', 'ok.']
@@ -12,6 +13,8 @@ saver = Saver()
 
 def run(*names):
     # def get_interpreted_file_template(name, surname, data_ur, miejsce_ur, data_sm, miejsce_sm, kategorie, dziela):
+    painter = Painter("", "")
+
     get_raw_text(*names)
     get_images(*names)
 
@@ -24,8 +27,14 @@ def run(*names):
     data_ur = extract_date(find_by_key_word(soup, 'urodzenia'))
     data_ur_list = {data_ur}
 
+    for data in data_ur_list:
+        painter.new_dictionary_entries(data, "data_ur")
+
     miejsce_ur = extract_place(find_by_key_word(soup, 'urodzenia'))
     miejsce_ur_list = {miejsce_ur}
+
+    for data in miejsce_ur_list:
+        painter.new_dictionary_entries(data, "miejsce_ur")
 
     data_sm = extract_date(find_by_key_word(soup, 'śmierci'))
     data_sm_list = {data_sm}
@@ -45,6 +54,7 @@ def run(*names):
     file.write(template)
     file.close()
 
+    return painter
 
 def set_up_url(*names):
     painter = format(*names)

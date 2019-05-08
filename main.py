@@ -7,10 +7,13 @@ def main():
     name = "Zdzisław"
     surname = "Beksiński"
 
-    wiki.run(name, surname)
+    wiki_painter = wiki.run(name, surname)
     ms.find_painter_url(surname)
 
     manager = Manager(name, surname)
+    manager.add_temp_painter(wiki_painter)
+
+
     manager.run()
 
 if __name__ == "__main__":
