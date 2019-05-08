@@ -3,8 +3,14 @@ from urllib.error import HTTPError
 from bs4 import BeautifulSoup
 import re
 from unidecode import unidecode
+from files_stuff.Saver import Saver
+
 import urllib.parse
 from urllib.parse import quote
+
+
+Saver = Saver()
+
 
 #start method
 def find_painter_url(phrase):
@@ -70,7 +76,7 @@ def get_category(url):
     categories = bs.find_all('a',{'rel': 'category tag'})
     for category in categories:
         list.append(category.get_text())
-    f.write(misc.get_interpreted_file_template('','','','','','',list,[]))
+    f.write(Saver.get_interpreted_file_template([], [], [], [], list,[]))
     f.close
 
 
