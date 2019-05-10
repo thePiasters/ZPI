@@ -1,60 +1,47 @@
 import requests
 from bs4 import BeautifulSoup
-from files_stuff.Saver import Saver
 from manager.Painter import Painter
 
 months_and_syntax = ['stycznia', 'lutego', 'marca', 'kwietnia', 'maja', 'czerwca',
                      'lipca', 'sierpnia', 'września', 'października', 'listopada', 'grudnia', 'ok.']
 
-path_interpreted = '..\\ZPI\\files_stuff\\interpreted\\wikipedia.txt'
-path_raw = '..\\ZPI\\files_stuff\\raw\\wikipedia.txt'
-path_img = '..\\ZPI\\files_stuff\\pictures\\wikipedia.txt'
-saver = Saver()
 
-def run(*names):
-    # def get_interpreted_file_template(name, surname, data_ur, miejsce_ur, data_sm, miejsce_sm, kategorie, dziela):
-    painter = Painter("", "")
+def run(manager, *names):
+    painter = Painter("wikipedia")
+    painter.new_temp_text(get_raw_text(*names))
 
-    get_raw_text(*names)
-    get_images(*names)
+    images = get_images(*names)
+    painter.new_crawler_data_list(images, "link")
 
     soup = set_up_url(*names)
 
-    file = open(path_interpreted, 'w', encoding='utf-8')
-
     name = find_by_key_word(soup, 'Imię')
+    painter.new_crawler_data_list({name}, "imie")
 
     data_ur = extract_date(find_by_key_word(soup, 'urodzenia'))
-    data_ur_list = {data_ur}
-
-    for data in data_ur_list:
-        painter.new_dictionary_entries(data, "data_ur")
+    painter.new_crawler_data_list({data_ur}, "data_ur")
 
     miejsce_ur = extract_place(find_by_key_word(soup, 'urodzenia'))
-    miejsce_ur_list = {miejsce_ur}
-
-    for data in miejsce_ur_list:
-        painter.new_dictionary_entries(data, "miejsce_ur")
+    painter.new_crawler_data_list({miejsce_ur}, "miejsce_ur")
 
     data_sm = extract_date(find_by_key_word(soup, 'śmierci'))
-    data_sm_list = {data_sm}
+    painter.new_crawler_data_list({data_sm}, "data_sm")
 
     miejsce_sm = extract_place(find_by_key_word(soup, 'śmierci'))
-    miejsce_sm_list = {miejsce_sm}
+    painter.new_crawler_data_list({miejsce_sm}, "miejsce_sm")
 
     dziela = find_work_of_arts(soup)
+    painter.new_crawler_data_list(dziela, "dzielo")
 
     kategorie = []
     epoka = find_by_key_word(soup, 'Epoka')
     if epoka != "":
         kategorie.append(epoka)
+    painter.new_crawler_data_list(kategorie, "kategoria")
 
-    template = saver.get_interpreted_file_template(data_ur_list, miejsce_ur_list, data_sm_list, miejsce_sm_list, kategorie, dziela)
+    print(painter.crawler_text_dump())
+    manager.add_temp_painter(painter)
 
-    file.write(template)
-    file.close()
-
-    return painter
 
 def set_up_url(*names):
     painter = format(*names)
@@ -76,13 +63,17 @@ def format(*args):
 
 
 def get_raw_text(*names):
-    file = open(path_raw, 'w', encoding='utf-8')
+    #file = open(path_raw, 'w', encoding='utf-8')
     soup = set_up_url(*names)
 
+    raw_text = ""
     for component in soup.find_all('p' or 'h2' or 'h3'):
-        file.write(component.getText())
+        raw_text += component.getText()
+        #file.write(component.getText())
 
-    file.close();
+    return raw_text
+    #file.close();
+
 
 
 def concat(string, stirng_to_concat):
@@ -178,13 +169,11 @@ def find_work_of_arts(soup):
 def get_images(*names):
     soup = set_up_url(*names)
     components = soup.find_all('img')
-    string = ""
+    links_list = []
     for img in components:
         if "//upload.wikimedia" not in img['src'] or "svg" in img['src']:
             continue
-        string += img['src'] + "\n"
+        links_list.append(img['src'])
 
-    file = open(path_img, 'w', encoding='utf-8')
-    file.write(string)
-    file.close()
-    return string;
+    return links_list;
+

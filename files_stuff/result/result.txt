@@ -1,32 +1,48 @@
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-BIO
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[QUERY]:
+Jan Matejko
 
 [Name]:
-Jan
-
-[Surname]:
-Matejko
+3 rep(s): <Jan Alojzy Matejko>
+2 rep(s): <Salvador Domènec Felip Jacint Dalí i Domènech, marquès de Dalí de Púbol>
 
 [Birth Date]:
-24 czerwca 1838  - 1 occurrences
+3 rep(s): <24 czerwca 1838>
+2 rep(s): <11 maja 1904>
+1 rep(s): <20 czerwca 1793>
 
 [Birth Place]:
-Kraków - 1 occurrences
- Wolne Miasto Kraków  - 1 occurrences
+3 rep(s): <Kraków, Wolne Miasto Kraków>
+2 rep(s): <Figueres>
+1 rep(s): <Surochów>
 
 [Death Date]:
-1 listopada 1893  - 1 occurrences
+3 rep(s): <1 listopada 1893>
+2 rep(s): <23 stycznia 1989>
+1 rep(s): <15 lipca 1876>
 
 [Death Place]:
-Kraków - 1 occurrences
- Austro-Węgry  - 1 occurrences
+3 rep(s): <Kraków, Austro-Węgry>
+2 rep(s): <Figueres>
+1 rep(s): <Lwów>
 
 [Categories]:
-realizm - 1 occurrences
-Realiści - 2 occurrences
+3 rep(s): <realizm>
+2 rep(s): <surrealizm>
 
 [Works]:
+3 rep(s): <Bitwa pod Grunwaldem>
+3 rep(s): <Konstytucja 3 Maja>
+3 rep(s): <Stańczyk>
+1 rep(s): <Damy i huzary>
+1 rep(s): <Pan Jowialski>
+1 rep(s): <Śluby panieńskie>
+1 rep(s): <Zemsta>
+
+[Museum]:
+<no data>
+
+[Education]:
+<no data>
 
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -34,7 +50,7 @@ RAW TEXTS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ~~~~~~~~~~~~~
-SOURCE 0
+SOURCE [wikipedia]
 ~~~~~~~~~~~~~
 Jan Alojzy Matejko (ur. 24 czerwca[a] 1838 w Krakowie, zm. 1 listopada 1893 tamże) – polski malarz, twórca obrazów historycznych i batalistycznych, historiozof. Był autorem ponad trzystu obrazów olejnych oraz kilkuset rysunków i szkiców[1]. Jeden z najwybitniejszych polskich malarzy w historii[2].
 W latach 1852–1858 studiował u Władysława Łuszczkiewicza i Wojciecha Stattlera w Szkole Sztuk Pięknych w Krakowie, której później był dyrektorem (od 1873). Jego uczniami byli m.in. Maurycy Gottlieb, Jacek Malczewski, Józef Mehoffer i Stanisław Wyspiański.
@@ -60,17 +76,54 @@ Z okazji jubileuszu 600-lecia śmierci św. Kingi w 1892 roku Jan Matejko namalo
 Wykształcił wielu malarzy. Najważniejszymi uczniami byli Mehoffer, Wyspiański, Tetmajer i Malczewski, wybitni przedstawiciele polskiego modernizmu.
 
 
-~~~~~~~~~~~~~
-SOURCE 1
-~~~~~~~~~~~~~
-Jan Matejko, a właściwie – Jan Alojzy Matejko, urodził się 24 czerwca 1838 roku w Krakowie, zmarł w rodzinnym mieście 1 listopada 1893 roku. Wybitny polski malarz, autor wielu dzieł historycznych i batalistycznych. Nauczał znanych artystów. Wśród nich znaleźli się m.in. Jacek Malczewski, Józef Mehoffer i Stanisław Wyspiański.
-Jan Matejko miał dziesięcioro rodzeństwa. Po śmierci matki wychowywany był przez siostrę. Surowy ojciec nie okazywał uczuć, dlatego dzieciństwa Matejki nie można zaliczyć do najszczęśliwszych okresów w jego życiu. Nauki pobierał w krakowskiej Szkole Sztuk Pięknych. Szybko zauważono jego talent, dlatego otrzymał stypendium na studia w Monachium.
-Jan Matejko, Autoportret, 1892
-Swój najsłynniejszy obraz Matejko namalował w 1862 roku, mając jedynie 24 lata. Mowa oczywiście o „Stańczyku”. W trakcie powstania styczniowego nie był w stanie walczyć ze względu na słaby wzrok, jednak starał się pomagać finansowo. Był hojnym człowiekiem. Zarobione pieniądze z wystawy „Kazania Skargi” przeznaczył na Dom Dziecka.
-W 1864 roku ożenił się z Teodorą Giebułtowską. Doczekał się pięciu potomków – Tadeusza, Heleny, Beaty, Jerzego oraz Reginy. Małżeństwo nie było udane ze względu na kłótliwy charakter żony, która ostatecznie trafiła do szpitala psychiatrycznego. Jej twarz znajduje się na niemal każdym obrazie Matejki.
-Matejko został nagrodzony Złotym Medalem oraz Legią Honorową, co rozsławiło go w artystycznym świecie i dało większe zarobki. Pełnił funkcję dyrektora Szkoły Sztuk Pięknych w Krakowie oraz aktywnie działał na rzecz upiększania rodzimego miasta i ochrony lokalnych zabytków. Zmarł nagle w wyniku pęknięcia wrzodu żołądka. Miał 55 lat. Na jego pogrzeb przyszły tysiące mieszkańców. Został pochowany w rodzinnym grobowcu na Cmentarzu Rakowickim w Krakowie.
-Pasją Matejki było malarstwo historyczne. Precyzja i szczegółowość na jego obrazach była cechą charakterystyczną artysty. Jego dzieła są niezwykle dynamiczne, często w formacie panoramicznym oraz wielowątkowe. Ponadto Matejko używał intensywnych barw, często też stosował kontrast dla podniesienia dramaturgii sceny. Dokładne kontury oraz gładka powierzchnia powstawały, dzięki oszczędnemu używaniu farb. Na obrazach Matejki zauważyć można historyczne ubrania, ówczesny style architektoniczne oraz inne dawnej używane sprzęty czy akcesoria.
-Jan Matejko, Stańczyk, 1862
-Pod koniec swojej karier artystycznej zmienił niektóre nawyki. Przystał dbać już tak bardzo o staranność swych dzieł. Używał też więcej farby niż wcześniej. Jego największymi dziełami są obrazy olejne takie jak:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
+GALLERY:
+3 rep(s): <//upload.wikimedia.org/wikipedia/commons/thumb/8/89/Jan_Matejko.JPG/174px-Jan_Matejko.JPG>
+3 rep(s): <//upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Ord.Franz.Joseph-COM.png/40px-Ord.Franz.Joseph-COM.png>
+3 rep(s): <//upload.wikimedia.org/wikipedia/commons/thumb/1/12/Ord.CoronaFerrea_-_COM.png/40px-Ord.CoronaFerrea_-_COM.png>
+3 rep(s): <//upload.wikimedia.org/wikipedia/commons/thumb/4/40/COM.OrdinePiano.png/40px-COM.OrdinePiano.png>
+3 rep(s): <//upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Rodze%C5%84stwo_Matejki.jpeg/170px-Rodze%C5%84stwo_Matejki.jpeg>
+3 rep(s): <//upload.wikimedia.org/wikipedia/commons/thumb/6/63/Matejko-Dzieci.jpg/220px-Matejko-Dzieci.jpg>
+3 rep(s): <//upload.wikimedia.org/wikipedia/commons/thumb/0/00/Sala_Matejki_Muzeum_Narodowe_w_Warszawie_2014_01.JPG/220px-Sala_Matejki_Muzeum_Narodowe_w_Warszawie_2014_01.JPG>
+3 rep(s): <//upload.wikimedia.org/wikipedia/commons/thumb/8/87/GrobowiecJanaMatejki-CmentarzRakowicki-POL%2C_Krak%C3%B3w.jpg/170px-GrobowiecJanaMatejki-CmentarzRakowicki-POL%2C_Krak%C3%B3w.jpg>
+3 rep(s): <//upload.wikimedia.org/wikipedia/commons/2/20/Matejko.jpg>
+3 rep(s): <//upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Kinga_w%C4%99gierska.jpg/200px-Kinga_w%C4%99gierska.jpg>
+3 rep(s): <//upload.wikimedia.org/wikipedia/commons/thumb/0/02/Carowie_Szujscy_by_Jan_Matejko_18th_century_painting.jpeg/150px-Carowie_Szujscy_by_Jan_Matejko_18th_century_painting.jpeg>
+3 rep(s): <//upload.wikimedia.org/wikipedia/commons/thumb/7/78/Jan_Matejko%2C_Sta%C5%84czyk.jpg/150px-Jan_Matejko%2C_Sta%C5%84czyk.jpg>
+3 rep(s): <//upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Kazanie_Skargi.jpg/150px-Kazanie_Skargi.jpg>
+3 rep(s): <//upload.wikimedia.org/wikipedia/commons/thumb/9/91/Rok_1863_Polonia.JPG/150px-Rok_1863_Polonia.JPG>
+3 rep(s): <//upload.wikimedia.org/wikipedia/commons/thumb/8/86/Rejtan_at_Sejm_of_1773_by_Jan_Matejko%2C_1866.png/150px-Rejtan_at_Sejm_of_1773_by_Jan_Matejko%2C_1866.png>
+3 rep(s): <//upload.wikimedia.org/wikipedia/commons/thumb/9/99/Alchemik_Sedziwoj_Matejko.JPG/150px-Alchemik_Sedziwoj_Matejko.JPG>
+3 rep(s): <//upload.wikimedia.org/wikipedia/commons/thumb/4/47/Lublin_Union_1569.PNG/150px-Lublin_Union_1569.PNG>
+3 rep(s): <//upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Jan_Matejko-Batory_pod_Pskowem.jpg/150px-Jan_Matejko-Batory_pod_Pskowem.jpg>
+3 rep(s): <//upload.wikimedia.org/wikipedia/commons/thumb/8/88/Jan_Matejko-Astronomer_Copernicus-Conversation_with_God.jpg/150px-Jan_Matejko-Astronomer_Copernicus-Conversation_with_God.jpg>
+3 rep(s): <//upload.wikimedia.org/wikipedia/commons/thumb/2/28/Matejko_Hanging_of_the_Zygmunt_bell.jpg/150px-Matejko_Hanging_of_the_Zygmunt_bell.jpg>
+3 rep(s): <//upload.wikimedia.org/wikipedia/commons/thumb/9/9f/%C5%9Amier%C4%87_kr%C3%B3la_Przemys%C5%82a_II.jpg/150px-%C5%9Amier%C4%87_kr%C3%B3la_Przemys%C5%82a_II.jpg>
+3 rep(s): <//upload.wikimedia.org/wikipedia/commons/thumb/3/38/Jan_Matejko%2C_Bitwa_pod_Grunwaldem.jpg/150px-Jan_Matejko%2C_Bitwa_pod_Grunwaldem.jpg>
+3 rep(s): <//upload.wikimedia.org/wikipedia/commons/thumb/1/11/Prussian_Homage.jpg/150px-Prussian_Homage.jpg>
+3 rep(s): <//upload.wikimedia.org/wikipedia/commons/thumb/0/05/King_John_III_Sobieski_Sobieski_sending_Message_of_Victory_to_the_Pope%2C_after_the_Battle_of_Vienna_111.PNG/150px-King_John_III_Sobieski_Sobieski_sending_Message_of_Victory_to_the_Pope%2C_after_the_Battle_of_Vienna_111.PNG>
+3 rep(s): <//upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Matejko_Wernyhora.jpg/150px-Matejko_Wernyhora.jpg>
+3 rep(s): <//upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Joanna_d%60Arc_by_Jan_Matejko_1.jpg/150px-Joanna_d%60Arc_by_Jan_Matejko_1.jpg>
+3 rep(s): <//upload.wikimedia.org/wikipedia/commons/thumb/f/f4/JMatejko_Akademia_Lubra%C5%84skiego.JPG/150px-JMatejko_Akademia_Lubra%C5%84skiego.JPG>
+3 rep(s): <//upload.wikimedia.org/wikipedia/commons/thumb/1/12/Bitwa_pod_Raclawicami.jpg/150px-Bitwa_pod_Raclawicami.jpg>
+3 rep(s): <//upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Matejko_Christianization_of_Poland.jpg/150px-Matejko_Christianization_of_Poland.jpg>
+3 rep(s): <//upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Baptism_of_Lithuania.PNG/150px-Baptism_of_Lithuania.PNG>
+3 rep(s): <//upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Konstytucja_3_Maja.jpg/150px-Konstytucja_3_Maja.jpg>
+3 rep(s): <//upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Carowie_Szujscy_na_sejmie_warszawskim_Jan_Matejko_18_century.jpeg/150px-Carowie_Szujscy_na_sejmie_warszawskim_Jan_Matejko_18_century.jpeg>
+3 rep(s): <//upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Matejko_Self-portrait.jpg/150px-Matejko_Self-portrait.jpg>
+3 rep(s): <//upload.wikimedia.org/wikipedia/commons/thumb/7/72/Sluby_Jana_Kazimierza_2.jpg/150px-Sluby_Jana_Kazimierza_2.jpg>
+3 rep(s): <//upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Matejko_Ascension_of_Christ.jpg/150px-Matejko_Ascension_of_Christ.jpg>
+2 rep(s): <//upload.wikimedia.org/wikipedia/commons/thumb/3/34/Salvador_Dal%C3%AD%2C_1934_%28photo_by_Carl_Van_Vechten%29.jpeg/192px-Salvador_Dal%C3%AD%2C_1934_%28photo_by_Carl_Van_Vechten%29.jpeg>
+2 rep(s): <//upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Salvador_Dali_A_%28Dali_Atomicus%29_09633u.jpg/220px-Salvador_Dali_A_%28Dali_Atomicus%29_09633u.jpg>
+2 rep(s): <//upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Popiersie_Salvador_Dali_ssj_20110627.jpg/220px-Popiersie_Salvador_Dali_ssj_20110627.jpg>
+2 rep(s): <//upload.wikimedia.org/wikipedia/commons/4/4b/Arno_Breker_Dali_%281975%29.jpg>
+1 rep(s): <//upload.wikimedia.org/wikipedia/commons/thumb/4/49/Portret_Aleksandra_Fredry_-_fotografia.jpg/154px-Portret_Aleksandra_Fredry_-_fotografia.jpg>
+1 rep(s): <//upload.wikimedia.org/wikipedia/commons/thumb/1/10/Ord.Franz.Joseph-GC.png/40px-Ord.Franz.Joseph-GC.png>
+1 rep(s): <//upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Fredro_pomnik.JPG/220px-Fredro_pomnik.JPG>
+1 rep(s): <//upload.wikimedia.org/wikipedia/commons/thumb/a/a8/2007-08-05_Aleksander_Fredro_-_tablica_MSI_na_budynku_przy_ul._Aleksandra_Fredry_w_Warszawie.jpg/220px-2007-08-05_Aleksander_Fredro_-_tablica_MSI_na_budynku_przy_ul._Aleksandra_Fredry_w_Warszawie.jpg>
+1 rep(s): <//upload.wikimedia.org/wikipedia/commons/thumb/b/b3/RudkiNagrobekAFredro.JPG/220px-RudkiNagrobekAFredro.JPG>
+1 rep(s): <//upload.wikimedia.org/wikipedia/commons/thumb/b/b6/RudkiNagrobekAFredro2.JPG/220px-RudkiNagrobekAFredro2.JPG>
+1 rep(s): <//upload.wikimedia.org/wikipedia/commons/thumb/3/37/RudkiNagrobkiFredrow.JPG/220px-RudkiNagrobkiFredrow.JPG>
+1 rep(s): <//upload.wikimedia.org/wikipedia/commons/thumb/7/7a/RudkiTablicaPamiatkowa.JPG/220px-RudkiTablicaPamiatkowa.JPG>
+1 rep(s): <//upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Palac_Fredro-1.jpg/220px-Palac_Fredro-1.jpg>

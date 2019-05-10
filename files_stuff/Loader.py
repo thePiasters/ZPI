@@ -1,7 +1,7 @@
 class Loader:
 
     @staticmethod
-    def get_file_raw(file_path):
+    def get_text_file(file_path):
         contents = None
         opened = True
 

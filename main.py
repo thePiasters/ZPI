@@ -4,15 +4,18 @@ from crawlers import wiki
 
 
 def main():
-    name = "Jan"
-    surname = "Matejko"
+    name_query = "Jan"
+    surname_query = "Matejko"
 
-    wiki_painter = wiki.run(name, surname)
-    ms.find_painter_url(surname)
+    manager = Manager(name_query, surname_query)
 
-    manager = Manager(name, surname)
-    manager.add_temp_painter(wiki_painter)
-
+    wiki.run(manager, "Aleksander", "Fredro")
+    wiki.run(manager, name_query, surname_query)
+    wiki.run(manager, "Salvador", "Dali")
+    wiki.run(manager, name_query, surname_query)
+    wiki.run(manager, "Salvador", "Dali")
+    wiki.run(manager, name_query, surname_query)
+    #ms.find_painter_url(surname_query)
 
     manager.run()
 
