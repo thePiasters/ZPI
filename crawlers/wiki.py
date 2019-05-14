@@ -70,7 +70,7 @@ def get_raw_text(*names):
     for component in soup.find_all('p' or 'h2' or 'h3'):
         file.write(component.getText())
 
-    file.close();
+    file.close()
 
 
 def concat(string, stirng_to_concat):
