@@ -4,16 +4,18 @@ from bs4 import BeautifulSoup
 import re
 from unidecode import unidecode
 from files_stuff.Saver import Saver
+from manager.Painter import Painter
 
 import urllib.parse
 from urllib.parse import quote
 
 
 Saver = Saver()
+painter = Painter("magzyn_sztuki")
 
 
 #start method
-def find_painter_url(phrase):
+def find_painter_url(manager,phrase):
     to_find=phrase.replace(" ", "+")
     to_find = convert_phrase(to_find)
     phrase=unidecode(phrase)
@@ -21,10 +23,10 @@ def find_painter_url(phrase):
     pages = set()
 
     url = 'http://www.magazynsztuki.pl/page/1/?s=' + to_find
-    check_pages(url,phrase,pages)
+    check_pages(manager,url,phrase,pages)
 
 
-def check_pages(pageUrl,phrase,pages):
+def check_pages(manager,pageUrl,phrase,pages):
     html = urlopen(pageUrl)
     bs = BeautifulSoup(html, 'html.parser')
     posts = bs.find_all('div', {'class': 'post'})
@@ -35,49 +37,58 @@ def check_pages(pageUrl,phrase,pages):
                     get_image(post.h4.a['href'])
                     retrive_info(post.h4.a['href'])
                     get_category(post.h4.a['href'])
+
+                    manager.add_temp_painter(painter)
         except:
             continue
-    link = bs.find('a', href=re.compile('http://www.magazynsztuki.pl/page/.*/?s='))
-    try:
-        if 'href' in link.attrs:
-            if link.attrs['href'] not in pages:
-                newPage = link.attrs['href']
-                pages.add(newPage)
-                check_pages(newPage,phrase,pages)
-    except:
-        return
+
+        link = bs.find('a', href=re.compile('http://www.magazynsztuki.pl/page/.*/?s='))
+        try:
+            if 'href' in link.attrs:
+                if link.attrs['href'] not in pages:
+                    newPage = link.attrs['href']
+                    pages.add(newPage)
+                    check_pages(manager, newPage, phrase, pages)
+        except:
+            return
 
 def retrive_info(link):
     html = urlopen(link)
     bs = BeautifulSoup(html, 'html.parser')
     paragraphs = bs.find_all('p')
-    f = open('..\\ZPI\\files_stuff\\raw\\magazyn_sztuki.txt','w', encoding='utf-8')
+    lista = ""
+    #f = open('..\\ZPI\\files_stuff\\raw\\magazyn_sztuki.txt','w', encoding='utf-8')
     for paragraph in paragraphs:
         if 'Zobacz moją stronę' in paragraph.get_text():
             break
-        f.write(paragraph.get_text()+'\n')
-    f.close
+        lista+=(paragraph.get_text()+'\n')
+
+    painter.new_temp_text(lista)
+    #f.close
 
 def get_image(url):
     html = urlopen(url)
     bs = BeautifulSoup(html, 'html.parser')
-    f = open("..\\ZPI\\files_stuff\\pictures\\magazyn_sztuki.txt","w", encoding='utf-8')
+    #f = open("..\\ZPI\\files_stuff\\pictures\\magazyn_sztuki.txt","w", encoding='utf-8')
     images = bs.find_all('img',
         {'class': re.compile('size-medium wp-image-\d*')})
+    lista = []
     for image in images:
-        f.writelines(image['src']+'\n')
-    f.close
+        lista.append(image['src'])
+    painter.new_crawler_data_list(lista,"link")
+    #f.close
 
 def get_category(url):
     html = urlopen(url)
     bs = BeautifulSoup(html, 'html.parser')
-    f = open("..\\ZPI\\files_stuff\\interpreted\\magazyn_sztuki.txt","w", encoding='utf-8')
-    list=[]
+    #f = open("..\\ZPI\\files_stuff\\interpreted\\magazyn_sztuki.txt","w", encoding='utf-8')
+    lista=[]
     categories = bs.find_all('a',{'rel': 'category tag'})
     for category in categories:
-        list.append(category.get_text())
-    f.write(Saver.get_interpreted_file_template([], [], [], [], list,[]))
-    f.close
+        if len(lista)==0 or lista[0]!=category.get_text():
+            lista.append(category.get_text())
+    painter.new_crawler_data_list(lista,"kategoria")
+    #f.close
 
 
 
