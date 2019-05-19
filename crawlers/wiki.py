@@ -10,8 +10,9 @@ key_words =['Malarze', 'malarze']
 categories = []
 
 
-def run(*names):
+def run(manager, *names):
 
+    soup = set_up_url(*names)
 
     painter = Painter("wikipedia")
     painter.new_temp_text(get_raw_text(soup))
@@ -60,7 +61,7 @@ def run(*names):
 
     painter.new_crawler_data_list(edukacja, "studia")
     print(painter.crawler_text_dump())
-    # manager.add_temp_painter(painter)
+    manager.add_temp_painter(painter)
 
 
 def set_up_url(*names):
@@ -241,7 +242,7 @@ def check_if_url_is_correct(url):
 # print("=====================================")
 # run("Antyfilos")
 # print("=====================================")
-# run("Fernando Botero Angulo")
+#run("Fernando Botero Angulo")
 # print("=====================================")
 # run("Stanislaw Ignacy", "Witkiewicz")
 # print("=====================================")
@@ -263,5 +264,5 @@ def check_if_url_is_correct(url):
 # run("ziemniaki")
 # run("malarz")
 # run("malarze","polscy")
-# run("wojciech", "pukocz")
+#run("wojciech", "pukocz")
 

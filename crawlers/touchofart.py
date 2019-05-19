@@ -1,9 +1,15 @@
 import requests
 from bs4 import BeautifulSoup
 from google.cloud import translate
+from manager.Painter import Painter
 
 
 url_search_counter = 3
+
+def run(manager, *names):
+    painter = Painter("touchofart")
+    painter.new_temp_text(get_raw_text(*names))
+    manager.add_temp_painter(painter)
 
 def create_query(*names):
     query = ""
@@ -32,12 +38,11 @@ def get_raw_text(*names):
 
     if url == "":
         if url_search_counter > 0:
-            print(url_search_counter)
+            #print(url_search_counter)
             --url_search_counter
-            print(url_search_counter)
+            #print(url_search_counter)
             get_raw_text(*names)
         else:
-            print("??????????")
             return
 
 
@@ -69,4 +74,3 @@ def get_translation(text):
 
 #
 # print(get_raw_text("Eugenion", "Berti"))
-print(get_raw_text("Twoja Stara"))
