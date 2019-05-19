@@ -1,44 +1,30 @@
 from files_stuff.Loader import Loader
+from files_stuff.Saver import Saver
 from manager.Painter import Painter
-import misc.misc
+
 
 class Manager:
 
-    def __init__(self, name, surname):
-        self.name = name
-        self.surname = surname
-        self.crawlers_list = []
-        self.painter = None
+    def __init__(self, name_query, surname_query):
+        self.name_query = name_query
+        self.surname_query = surname_query
+
+        self.main_painter = Painter("agregator")
+        self.main_painter.set_queries(name_query, surname_query)
+
+        self.saver = Saver()
+        self.temp_painters_list = []
 
     def run(self):
-        self.crawlers_list = Loader.get_file_as_list("misc/crawler_names_list.txt")
-        self.painter = Painter(self.name, self.surname)
-        self.print_crawler_list()
+        self.merge_painters()
+        self.main_painter.sort_dictionaries()
+        self.saver.save_final_file(self.main_painter.text_dump())
 
-    def print_crawler_list(self):
-        print("crawlers list:")
+    def add_temp_painter(self, painter):
+        self.temp_painters_list.append(painter)
 
-        if self.crawlers_list is []:
-            print("pusto")
-        else:
-            for crawler in self.crawlers_list:
-                print("["+crawler+"]")
+    def merge_painters(self):
+        for temp_painter in self.temp_painters_list:
+            self.main_painter.add_data_from_temp_painter(temp_painter)
 
-    def get_crawlers_data(self):
-        for crawler in self.crawlers_list:
-            raw_data = Loader.get_file_raw("files_stuff/raw/"+crawler+".txt")
-            self.painter.new_text(raw_data)
-
-            interpreted_file = Loader.get_file("files_stuff/interpreted/"+crawler+".txt")
-
-            interpreted_file.readLine().strip()
-            interpreted_file.readLine().strip()
-            data_ur = interpreted_file.readLine().strip()
-            miejsce_ur = interpreted_file.readLine().strip()
-            data_sm = interpreted_file.readLine().strip()
-            miejsce_sm = interpreted_file.readLine().strip()
-            epoka = interpreted_file.readLine().strip()
-
-            if data_ur is not None:
-                self.painter.new_birth_date(data_ur)
 

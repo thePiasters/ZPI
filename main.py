@@ -4,13 +4,19 @@ from crawlers import wiki
 
 
 def main():
-    name = "Zdzisław"
-    surname = "Beksiński"
+    name_query = "Jan"
+    surname_query = "Matejko"
 
-    wiki.run("Pablo", "Picasso")
-    ms.find_painter_url(surname)
+    manager = Manager(name_query, surname_query)
 
-    manager = Manager(name, surname)
+    wiki.run(manager, "Aleksander", "Fredro")
+    wiki.run(manager, name_query, surname_query)
+    wiki.run(manager, "Salvador", "Dali")
+    wiki.run(manager, name_query, surname_query)
+    wiki.run(manager, "Salvador", "Dali")
+    wiki.run(manager, name_query, surname_query)
+    #ms.find_painter_url(surname_query)
+
     manager.run()
 
 if __name__ == "__main__":
