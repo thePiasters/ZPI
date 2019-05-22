@@ -1,4 +1,5 @@
 import operator
+import operator
 import collections
 
 class Painter:
@@ -91,6 +92,14 @@ class Painter:
             to_print += end_line + end_line
 
         to_print += "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" + end_line
+        to_print += self.print_dictionary("GALLERY:", self.link_dict)
+
+        return to_print
+
+    def text_dump_list(self):
+        end_line = "\n"
+
+        to_print = self.print_dictionary("[Name]:", self.name_dict)
         to_print += self.print_dictionary("GALLERY:", self.link_dict)
 
         return to_print

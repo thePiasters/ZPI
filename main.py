@@ -4,8 +4,8 @@ from crawlers import wiki
 import sys
 
 def main():
-    name = "Jan"
-    surname = "Matejko"
+    name = ""
+    surname = ""
 
     query = None
     if len(sys.argv) == 2:
@@ -16,6 +16,7 @@ def main():
         if len(query_list) >= 2:
             name = query_list[0].strip()
             surname = query[len(name):].strip()
+
 
     manager = Manager(name, surname)
 
@@ -30,7 +31,8 @@ def main():
     #ms.find_painter_url(surname_query)
 
     wiki.run(manager, name, surname)
-    ms.find_painter_url(manager, surname)
+    ms.run_individual(manager, surname)
+
     manager.run()
 
 if __name__ == "__main__":

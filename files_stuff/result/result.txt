@@ -1,5 +1,5 @@
 [QUERY]:
-Leonardo DaVinci
+Zdzislaw Beksinski
 
 [Name]:
 <no data>
@@ -17,7 +17,9 @@ Leonardo DaVinci
 <no data>
 
 [Categories]:
-<no data>
+2 rep(s): <Surrealiści>
+2 rep(s): <Symboliści>
+1 rep(s): <Malarze współcześni>
 
 [Works]:
 <no data>
@@ -38,7 +40,26 @@ SOURCE [wikipedia]
 ~~~~~~~~~~~~~
 
 
+~~~~~~~~~~~~~
+SOURCE [magzyn_sztuki]
+~~~~~~~~~~~~~
+Zdzisław Beksiński, jeden z najwybitniejszych artystów polskich XX wieku, urodził się 24 lutego 1929 roku w Sanoku. Po ukończeniu gimnazjum i liceum, kształcił się na Wydziale Architektury Politechniki Krakowskiej. Po studiach pracował w Krakowie oraz Rzeszowie. W 1955 roku wraz z żoną, Zofią, powrócił do rodzinnego Sanoka. Powrót ten okazał się dla Beksińskiego bardzo trudny. Przestał wówczas pracować w budownictwie i nie chciał podjąć żadnej innej pracy. Utrzymywały go żona i matka. Dorabiał pracując, między innymi na pół etatu jako designer w sanockiej fabryce autobusów. Wtedy też podjął decyzję co do swojej artystycznej przyszłości – poświęcił się fotografowaniu, malowaniu i rysowaniu.
+W 1958 roku jego prace fotograficzne zaprezentowane zostały szerszej publiczności na kilku wystawach w Warszawie, Gliwicach i Poznaniu. Pierwszy poważny sukces artysty dotyczył jednak jego obrazów i rysunków, które wystawiono w 1964 roku w Starej Pomarańczarni w Warszawie. Wszystkie wystawione wówczas prace zostały sprzedane.
+W 1977 roku, Beksiński wraz z żoną i dziewiętnastoletnim synem Tomaszem przeprowadził się do Warszawy. Bezpośrednim powodem przeprowadzki był nakaz rozbiórki rodzinnego domu Beksińskich w Sanoku. Warszawa przyjęła malarza z otwartymi ramionami. Jego prace cieszyły się w stolicy ogromnym powodzeniem. Beksiński spotkał wówczas Piotra Dmochowskiego, swojego najbardziej upartego i zaangażowanego promotora i wieloletniego przyjaciela i rozpoczął z nim współpracę. Dmochowski zorganizował wiele wystaw Beksińskiego, zarówno w kraju, jak i na Zachodzie. Wyprodukował on nawet krótkometrażowy film „W hołdzie Beksińskiemu”, który pokazano w 1986 roku na Festiwalu Filmowym w Cannes.
+Zdzisław Beksiński, obraz bez tytułu, ok. 2000-2005
+Zdzisław Beksiński został zamordowany 21 lutego 2005 roku w swoim mieszkaniu. Sześć lat wcześniej, w 1999 roku jego syn Tomasz Beksiński popełnił samobójstwo.
+Zdaniem wielu, obrazy Beksińskiego reprezentują surrealizm w stylu Salvadora Dalego („Trwałość pamięci”). Nie jest to jednak skojarzenie do końca uzasadnione. Beksiński wypracował bowiem własny, niepowtarzalny styl, oparty na psychologicznej podświadomości i wolności formalnej.
+Beksiński zrezygnował z fotografii, gdy okazała się ona niewystarczająca dla urzeczywistniania tworów jego wyobraźni. Zwrócił się więc w stronę swobodniejszych form wyrazu – rysunku, malarstwa oraz rzeźby.
+Wczesne obrazy Beksińskiego miały charakter ekspresjonistyczny. Po latach malarz uznał je za naiwne i zniszczył. Swoją technikę ugruntował Beksiński w pracach abstrakcyjnych, które tworzył od drugiej połowy lat 50. Ujawniły się wówczas charakterystyczne cechy malarstwa Beksińskiego:
+Dotkliwy i mroczny symbolizm obrazów Beksińskiego podzielił krytyków na jego gorących wielbicieli i zaciekłych przeciwników.
+Zdzisław Beksiński, obraz bez tytułu, 1979
+Zarzucano mu, między innymi, niekonsekwencję kompozycyjną i formalną, kicz. Malarz musiał przez wiele lat bronić swojego prawa do swobodnego posługiwania się swoją wyobraźnią.
+Beksiński z reguły nie nazywał swoich prac. Uważał, że znaczenie jego obrazów powinno ujawnić się duszy odbiorcy, a do tego nie potrzeba żadnych objaśnień.
+Prace Zdzisława Beksińskiego przedstawiały jego własne przeżycia, myśli, lęki, obsesje. Jak sam twierdził, potrafił malować, ale nie potrafił powiedzieć nic rozsądnego na temat swoich obrazów.
+
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 GALLERY:
-<no data>
+1 rep(s): <http://www.magazynsztuki.pl/wp-content/uploads/2011/07/Beksinski-2000-2005-300x216.jpg>
+1 rep(s): <http://www.magazynsztuki.pl/wp-content/uploads/2011/07/Beksinski_1979-244x300.jpg>

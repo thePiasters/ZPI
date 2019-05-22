@@ -15,7 +15,7 @@ painter = Painter("magzyn_sztuki")
 
 
 #start method
-def find_painter_url(manager,phrase):
+def run_individual(manager,phrase):
     to_find=phrase.replace(" ", "+")
     to_find = convert_phrase(to_find)
     phrase=unidecode(phrase)
@@ -24,6 +24,16 @@ def find_painter_url(manager,phrase):
 
     url = 'http://www.magazynsztuki.pl/page/1/?s=' + to_find
     check_pages(manager,url,phrase,pages)
+
+def run_list_artists(manager,phrase):
+    to_find=phrase.replace(" ", "+")
+    to_find = convert_phrase(to_find)
+    phrase=unidecode(phrase)
+    phrase= phrase.lower()
+    pages = set()
+    file = open("files_stuff/result/result.txt", "w", encoding='utf-8')
+    url = 'http://www.magazynsztuki.pl/page/1/?s=' + to_find
+    check_pages_list(manager,url,phrase,pages,file)
 
 
 def check_pages(manager,pageUrl,phrase,pages):
@@ -39,18 +49,49 @@ def check_pages(manager,pageUrl,phrase,pages):
                     get_category(post.h4.a['href'])
 
                     manager.add_temp_painter(painter)
+
         except:
             continue
 
-        link = bs.find('a', href=re.compile('http://www.magazynsztuki.pl/page/.*/?s='))
+    link = bs.find('a', href=re.compile('http://www.magazynsztuki.pl/page/.*/?s='))
+    try:
+        if 'href' in link.attrs:
+            if link.attrs['href'] not in pages:
+                newPage = link.attrs['href']
+                pages.add(newPage)
+                check_pages(manager, newPage, phrase, pages)
+    except:
+        return
+
+def check_pages_list(manager,pageUrl,phrase,pages,file):
+    html = urlopen(pageUrl)
+    bs = BeautifulSoup(html, 'html.parser')
+    posts = bs.find_all('div', {'class': 'post'})
+
+    for post in posts:
         try:
-            if 'href' in link.attrs:
-                if link.attrs['href'] not in pages:
-                    newPage = link.attrs['href']
-                    pages.add(newPage)
-                    check_pages(manager, newPage, phrase, pages)
+            if "malarze" in post.h5.a['href']:
+                file.write(post.h4.text+" "+post.h4.a['href']+"\n")
+                #painter.new_crawler_data_list(post.h4.a['href'], "link")
+                #painter.new_crawler_data_list(post.h4.text,"imie")
+
+                #manager.add_temp_painter(painter)
+
         except:
-            return
+            continue
+
+    link = bs.find('a', href=re.compile('http://www.magazynsztuki.pl/page/.*/?s='))
+    try:
+        if 'href' in link.attrs:
+             if link.attrs['href'] not in pages:
+                newPage = link.attrs['href']
+                pages.add(newPage)
+                check_pages_list(manager,newPage, phrase, pages)
+    except:
+        file.close()
+        manager.add_temp_painter(painter)
+        return
+
 
 def retrive_info(link):
     html = urlopen(link)
@@ -86,6 +127,7 @@ def get_category(url):
     categories = bs.find_all('a',{'rel': 'category tag'})
     for category in categories:
         if len(lista)==0 or lista[0]!=category.get_text():
+            print(category.get_text())
             lista.append(category.get_text())
     painter.new_crawler_data_list(lista,"kategoria")
     #f.close
