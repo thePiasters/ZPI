@@ -1,5 +1,5 @@
 [QUERY]:
-Jan Matejko
+Leonardo DaVinci
 
 [Name]:
 <no data>
@@ -17,7 +17,7 @@ Jan Matejko
 <no data>
 
 [Categories]:
-1 rep(s): <Realiści>
+<no data>
 
 [Works]:
 <no data>
@@ -34,21 +34,11 @@ RAW TEXTS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ~~~~~~~~~~~~~
-SOURCE [magzyn_sztuki]
+SOURCE [wikipedia]
 ~~~~~~~~~~~~~
-Jan Matejko, a właściwie – Jan Alojzy Matejko, urodził się 24 czerwca 1838 roku w Krakowie, zmarł w rodzinnym mieście 1 listopada 1893 roku. Wybitny polski malarz, autor wielu dzieł historycznych i batalistycznych. Nauczał znanych artystów. Wśród nich znaleźli się m.in. Jacek Malczewski, Józef Mehoffer i Stanisław Wyspiański.
-Jan Matejko miał dziesięcioro rodzeństwa. Po śmierci matki wychowywany był przez siostrę. Surowy ojciec nie okazywał uczuć, dlatego dzieciństwa Matejki nie można zaliczyć do najszczęśliwszych okresów w jego życiu. Nauki pobierał w krakowskiej Szkole Sztuk Pięknych. Szybko zauważono jego talent, dlatego otrzymał stypendium na studia w Monachium.
-Jan Matejko, Autoportret, 1892
-Swój najsłynniejszy obraz Matejko namalował w 1862 roku, mając jedynie 24 lata. Mowa oczywiście o „Stańczyku”. W trakcie powstania styczniowego nie był w stanie walczyć ze względu na słaby wzrok, jednak starał się pomagać finansowo. Był hojnym człowiekiem. Zarobione pieniądze z wystawy „Kazania Skargi” przeznaczył na Dom Dziecka.
-W 1864 roku ożenił się z Teodorą Giebułtowską. Doczekał się pięciu potomków – Tadeusza, Heleny, Beaty, Jerzego oraz Reginy. Małżeństwo nie było udane ze względu na kłótliwy charakter żony, która ostatecznie trafiła do szpitala psychiatrycznego. Jej twarz znajduje się na niemal każdym obrazie Matejki.
-Matejko został nagrodzony Złotym Medalem oraz Legią Honorową, co rozsławiło go w artystycznym świecie i dało większe zarobki. Pełnił funkcję dyrektora Szkoły Sztuk Pięknych w Krakowie oraz aktywnie działał na rzecz upiększania rodzimego miasta i ochrony lokalnych zabytków. Zmarł nagle w wyniku pęknięcia wrzodu żołądka. Miał 55 lat. Na jego pogrzeb przyszły tysiące mieszkańców. Został pochowany w rodzinnym grobowcu na Cmentarzu Rakowickim w Krakowie.
-Pasją Matejki było malarstwo historyczne. Precyzja i szczegółowość na jego obrazach była cechą charakterystyczną artysty. Jego dzieła są niezwykle dynamiczne, często w formacie panoramicznym oraz wielowątkowe. Ponadto Matejko używał intensywnych barw, często też stosował kontrast dla podniesienia dramaturgii sceny. Dokładne kontury oraz gładka powierzchnia powstawały, dzięki oszczędnemu używaniu farb. Na obrazach Matejki zauważyć można historyczne ubrania, ówczesny style architektoniczne oraz inne dawnej używane sprzęty czy akcesoria.
-Jan Matejko, Stańczyk, 1862
-Pod koniec swojej karier artystycznej zmienił niektóre nawyki. Przystał dbać już tak bardzo o staranność swych dzieł. Używał też więcej farby niż wcześniej. Jego największymi dziełami są obrazy olejne takie jak:
 
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 GALLERY:
-1 rep(s): <http://www.magazynsztuki.pl/wp-content/uploads/2011/07/Jan-Matejko_Autoportret-197x300.jpg>
-1 rep(s): <http://www.magazynsztuki.pl/wp-content/uploads/2011/07/Jan-Matejko_Stańczyk-300x223.jpg>
+<no data>
