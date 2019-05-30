@@ -1,78 +1,69 @@
 import requests
 from bs4 import BeautifulSoup
 from manager.Painter import Painter
+from manager.Manager import Manager
+
+
+
+key_words =['Malarze', 'malarze']
 
 months_and_syntax = ['stycznia', 'lutego', 'marca', 'kwietnia', 'maja', 'czerwca',
                      'lipca', 'sierpnia', 'września', 'października', 'listopada', 'grudnia', 'ok.']
 
-key_words =['Malarze', 'malarze']
-
-categories = []
 
 
-def run(manager, *names):
+def get_list(*names):
+    dict = {}
+    print(names)
+    url = "https://pl.wikipedia.org/w/index.php?search="
+    for name in names:
 
-    soup = set_up_url(*names)
+        url += name+ "+"
+    url += "&title=Specjalna%3ASzukaj&profile=advanced&fulltext=1&advancedSearch-current=%7B%7D&ns0=1"
+    print(url)
 
-    painter = Painter("wikipedia")
-    painter.new_temp_text(get_raw_text(soup))
+    source_code = requests.get(url).text
+    soup = BeautifulSoup(source_code, features="html.parser")
+    component = soup.find_all('li', class_="mw-search-result")
+    wiki_prefix = "https://pl.wikipedia.org"
+    for c in component:
+        x = wiki_prefix+c.find('a')['href']
+        check_if_painter(x, dict)
+    return dict
 
-    name = find_by_key_word(soup, 'Imię')
-    painter.new_crawler_data_list({name}, "imie")
+def check_if_category_contains_key_word(category):
+    for key in key_words:
+        if key in category:
+            return True
+    return False
 
-    data_ur = extract_date(find_by_key_word(soup, 'urodzenia'))
-    painter.new_crawler_data_list({data_ur}, "data_ur")
+def convert_phrase(phrase):
+    phrase = phrase.replace('%C5%82','ł')
+    phrase = phrase.replace('%C4%85','ą')
+    phrase = phrase.replace('%C5%BC','ż')
+    phrase = phrase.replace('%C5%BA', 'ź')
+    phrase = phrase.replace('%C4%87', 'ć')
+    phrase = phrase.replace('%C5%84','ń')
+    phrase = phrase.replace('%C3%B3', 'ó')
+    phrase = phrase.replace('%C4%99', 'ę')
+    phrase = phrase.replace('%C5%9B', 'ś')
+    return phrase
 
-    miejsce_ur = extract_place(find_by_key_word(soup, 'urodzenia'))
-    painter.new_crawler_data_list({miejsce_ur}, "miejsce_ur")
+def check_if_painter(url, dict):
 
-    data_sm = extract_date(find_by_key_word(soup, 'śmierci'))
-    painter.new_crawler_data_list({data_sm}, "data_sm")
+    source_code = requests.get(url).text
+    soup = BeautifulSoup(source_code, features="html.parser")
+    div = soup.find(id="mw-normal-catlinks")
+    for a in div.find_all('a'):
+        if check_if_category_contains_key_word(a.getText()):
 
-    miejsce_sm = extract_place(find_by_key_word(soup, 'śmierci'))
-    painter.new_crawler_data_list({miejsce_sm}, "miejsce_sm")
-
-    dziela = find_work_of_arts(soup)
-    painter.new_crawler_data_list(dziela, "dzielo")
-
-    kategorie = []
-    epoka = find_by_key_word(soup, 'Epoka')
-
-    if epoka != "":
-        kategorie.append(epoka)
-
-    painter.new_crawler_data_list(kategorie, "kategoria")
-
-
-    muzea = []
-    muzeum = find_by_key_word(soup, 'Muzeum artysty')
-    if muzeum != "":
-        muzea.append(muzeum)
-
-    painter.new_crawler_data_list(muzea,"muzeum")
-
-    edukacja = []
-    edu = find_by_key_word(soup, 'Alma Mater')
-    edu_1 = find_by_key_word(soup,"Uczelnia")
-    if edu != "":
-        edukacja.append(edu)
-    if edu_1 != '':
-        edukacja.append(edu_1)
-
-    painter.new_crawler_data_list(edukacja, "studia")
-    print(painter.crawler_text_dump())
-#    manager.add_temp_painter(painter)
+            name = ""
+            for n in url.replace("https://pl.wikipedia.org/wiki/","").split("_"):
+                name += convert_phrase(n)+" "
 
 
-def set_up_url(*names):
-
-    url = get_url(*names)
-    if check_if_url_is_correct(url):
-        source_code = requests.get(url).text
-        return BeautifulSoup(source_code, features="html.parser")
-    else:
-        return None
-
+            name = name[:-1]
+            dict[name] = url
 
 def get_raw_text(soup):
 
@@ -82,7 +73,7 @@ def get_raw_text(soup):
 
     raw_text = ""
     for component in soup.find_all('p' or 'h2' or 'h3'):
-        raw_text += component.getText()
+        raw_text += component.getText()+"\n"
 
     return raw_text
 
@@ -139,130 +130,84 @@ def find_work_of_arts(soup):
                                 paintings.append(i.find('a').getText())
     return paintings
 
-
-# def get_images(*names):
-#     soup = set_up_url(*names)
-#     components = soup.find_all('img')
-#     links_list = []
-#     for img in components:
-#         if "//upload.wikimedia" not in img['src'] or "svg" in img['src']:
-#             continue
-#         links_list.append(img['src'])
-#
-#     return links_list
-
-def create_query(*names):
-    query = ""
-    for name in names:
-        query += name + " "
-
-    query += "wikipedia"
-    print(query)
-    url = "https://www.google.com/search?q=" + query
-    source_code = requests.get(url).text
-    return BeautifulSoup(source_code, features="html.parser")
-
-def check_if_category_contains_key_word(category):
-    for key in key_words:
-        if key in category:
-            return True
-    return False
-
-
-def get_url(*names):
-    soup = create_query(*names)
-    url = ""
-
-    # print("urls: ")
-    # for d in soup.find_all('div', class_="g"):
-    #     if d is not None:
-    #         a = d.find('a')
-    #         if a is not None:
-    #             a = d.find('a')['href']
-    #             if 'pl.wikipedia'in a:
-    #                 a = a.replace("/url?q=", "")
-    #                 print(a)
-    #                 break
-
-    for c in soup.find_all('cite'):
-        if 'pl.wikipedia' in c.getText() and 'Kategoria' not in c.getText():
-            url = c.getText()
-            break
-
-    if "http" not in url:
-        print("Nie znalazł url")
-        print("NIE MALARZ")
-        return ""
-
-    print(url)
-    return url
-
-def check_if_url_is_correct(url):
-
-
-
-    print("checking url ", url)
-    if url == "":
-        return False
+def run(manager, url):
 
     source_code = requests.get(url).text
     soup = BeautifulSoup(source_code, features="html.parser")
 
-    div = soup.find(id="mw-normal-catlinks")
-    if div is None:
-        print("Nie znalazł kategorii dziad")
-        print("NIE MALARZ")
-        return False
+    painter = Painter("wikipedia")
+    painter.new_temp_text(get_raw_text(soup))
+    print(get_raw_text(soup))
 
-    for a in div.find_all('a'):
-        if check_if_category_contains_key_word(a.getText()):
-            print("MALARZ")
-            return True
+    name = find_by_key_word(soup, 'Imię')
+    painter.new_crawler_data_list({name}, "imie")
 
-    print("NIE MALARZ")
-    return False
-    #print(div)
+    data_ur = extract_date(find_by_key_word(soup, 'urodzenia'))
+    painter.new_crawler_data_list({data_ur}, "data_ur")
+
+    miejsce_ur = extract_place(find_by_key_word(soup, 'urodzenia'))
+    painter.new_crawler_data_list({miejsce_ur}, "miejsce_ur")
+
+    data_sm = extract_date(find_by_key_word(soup, 'śmierci'))
+    painter.new_crawler_data_list({data_sm}, "data_sm")
+
+    miejsce_sm = extract_place(find_by_key_word(soup, 'śmierci'))
+    painter.new_crawler_data_list({miejsce_sm}, "miejsce_sm")
+
+    dziela = find_work_of_arts(soup)
+    painter.new_crawler_data_list(dziela, "dzielo")
+
+    kategorie = []
+    epoka = find_by_key_word(soup, 'Epoka')
+
+    if epoka != "":
+        kategorie.append(epoka)
+
+    painter.new_crawler_data_list(kategorie, "kategoria")
 
 
-# run("Wiktor Gajda")
-# print("=====================================")
-# run("Leonardo", "da", "Vinci")
-# print("=====================================")
-#run("Zdzislaw Beksinski")
-# print("=====================================")
-# run("Zofia Albinowska-Minkiewiczowa")
-# print("=====================================")
-run("Witkacy")
-# print("=====================================")
-# run("Witold Cichacz")
-# print("=====================================")
-# run("Aniela Cukier")
-# print("=====================================")
-# run("Henryk Dębicki")
-# print("=====================================")
-# run("Antyfilos")
-# print("=====================================")
-#run("Fernando Botero Angulo")
-# print("=====================================")
-# run("Stanislaw Ignacy", "Witkiewicz")
-# print("=====================================")
+    muzea = []
+    muzeum = find_by_key_word(soup, 'Muzeum artysty')
+    if muzeum != "":
+        muzea.append(muzeum)
+
+    painter.new_crawler_data_list(muzea,"muzeum")
+
+    edukacja = []
+    edu = find_by_key_word(soup, 'Alma Mater')
+    edu_1 = find_by_key_word(soup,"Uczelnia")
+    if edu != "":
+        edukacja.append(edu)
+    if edu_1 != '':
+        edukacja.append(edu_1)
+
+    painter.new_crawler_data_list(edukacja, "studia")
+    print(painter.crawler_text_dump())
+    manager.add_temp_painter(painter)
+
+
+
+# x = "Wiktor Gajda"
+x = "Leonardo", "da Vinci"
+# x = "Aniela", "Cukier"
+# x = "Henryk", "Dębicki"
+# x = "Antyfilos"
+# x = "Fernando Botero", "Angulo"
+# x = "Stanisław","Ignacy", "Witkiewicz"
+# x = "malarze","polscy"
+# x = "Zdzislaw","Beksinski"
+# x = "wojciech", "pukocz"
+# x = "Zofia Albinowska-Minkiewiczowa"
+
+manager = Manager("Edward", "Mesjasz")
+url = get_list("Edward Mesjasz").get("Edward Mesjasz")
+run(manager, url)
+# # # print("=====================================")
+# # get_url("Leonardo", "da", "Vinci")
+# # # print("=====================================")
+# get_url("Zdzislaw Beksinski")
+# # # print("=====================================")
+# get_url()
+# # print("=====================================")
+# #get_url("Witkacy")
 #
-# run("Twoja Stara")
-# print("=====================================")
-#
-# run("Michael Jackson")
-# print("=====================================")
-# run("Kurt Cobain")
-# print("=====================================")
-# run("Lech Kaczynski")
-# print("=====================================")
-# run("Rick Sanchez")
-# print("=====================================")
-# run("Dziaba dziaba")
-# run("raptapapap")
-# run("ja pierdole")
-# run("ziemniaki")
-# run("malarz")
-# run("malarze","polscy")
-#run("wojciech", "pukocz")
-
