@@ -1,4 +1,5 @@
 .idea
+.idea/workspace.xml
 /venv
 
 files_stuff/__pycache__/Loader.cpython-37.pyc
