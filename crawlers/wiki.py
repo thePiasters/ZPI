@@ -187,27 +187,9 @@ def run(manager, url):
 
 
 
-# x = "Wiktor Gajda"
-x = "Leonardo", "da Vinci"
-# x = "Aniela", "Cukier"
-# x = "Henryk", "Dębicki"
-# x = "Antyfilos"
-# x = "Fernando Botero", "Angulo"
-# x = "Stanisław","Ignacy", "Witkiewicz"
-# x = "malarze","polscy"
-# x = "Zdzislaw","Beksinski"
-# x = "wojciech", "pukocz"
-# x = "Zofia Albinowska-Minkiewiczowa"
 
-manager = Manager("Edward", "Mesjasz")
-url = get_list("Edward Mesjasz").get("Edward Mesjasz")
-run(manager, url)
-# # # print("=====================================")
-# # get_url("Leonardo", "da", "Vinci")
-# # # print("=====================================")
-# get_url("Zdzislaw Beksinski")
-# # # print("=====================================")
-# get_url()
-# # print("=====================================")
-# #get_url("Witkacy")
-#
+
+# manager = Manager("Edward", "Mesjasz")
+# url = get_list("Edward Mesjasz").get("Edward Mesjasz")
+# run(manager, url)
+
