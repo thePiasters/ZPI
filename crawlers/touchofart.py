@@ -26,8 +26,10 @@ def create_query(*names):
 def get_raw_text(*names):
     soup = create_query(*names)
 
+    print(soup)
     url = ""
     for d in soup.find_all('div', class_="g"):
+        print(d)
         a = d.find('a')['href']
         if "touchofart.eu" not in a or "https://www.touchofart.eu/en" in a or "https://www.touchofart.eu/ru" in a or 'galeria' in a or "https://www.touchofart.eu/de" in a:
             continue
@@ -37,12 +39,6 @@ def get_raw_text(*names):
         break
 
     if url == "":
-        if url_search_counter > 0:
-            #print(url_search_counter)
-            --url_search_counter
-            #print(url_search_counter)
-            get_raw_text(*names)
-        else:
             return
 
 
@@ -72,5 +68,4 @@ def get_translation(text):
     return format(translation['translatedText'])
 
 
-#
-# print(get_raw_text("Eugenion", "Berti"))
+print(get_raw_text("Eugenion", "Berti"))

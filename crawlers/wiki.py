@@ -61,7 +61,7 @@ def run(manager, *names):
 
     painter.new_crawler_data_list(edukacja, "studia")
     print(painter.crawler_text_dump())
-    manager.add_temp_painter(painter)
+#    manager.add_temp_painter(painter)
 
 
 def set_up_url(*names):
@@ -228,11 +228,11 @@ def check_if_url_is_correct(url):
 # print("=====================================")
 # run("Leonardo", "da", "Vinci")
 # print("=====================================")
-# run("Zdzislaw Beksinski")
+#run("Zdzislaw Beksinski")
 # print("=====================================")
 # run("Zofia Albinowska-Minkiewiczowa")
 # print("=====================================")
-# run("Witkacy")
+run("Witkacy")
 # print("=====================================")
 # run("Witold Cichacz")
 # print("=====================================")

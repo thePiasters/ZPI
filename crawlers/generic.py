@@ -10,6 +10,7 @@ def create_query(*names):
     print(query)
     url = "https://www.google.com/search?q=" + query
     source_code = requests.get(url).text
+    print(source_code)
     return BeautifulSoup(source_code, features="html.parser")
 
 def get_raw(*names):
